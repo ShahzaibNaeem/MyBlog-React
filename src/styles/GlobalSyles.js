@@ -41,13 +41,27 @@ export const GlobalStyle=createGlobalStyle`
   }
 
   a{
-     text-decoration:none
+     text-decoration:none;
+     font-size:1.8rem;
   }
 
   li{
-     list-style:none
+     list-style:none;
   }
-  
-
+                     /* ---------Reusable Classes------- */
+  .container{
+     max-width:120rem;
+     margin:auto;
+  }
+  .grid{
+   display:grid;
+   gap:9rem;
+  }
+  .grid-two-column{
+   grid-template-columns:repeat(2,auto);
+  }
+  .grid-three-column{
+   grid-template-columns:repeat(3,auto);
+  }
 
 `

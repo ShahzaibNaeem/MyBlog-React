@@ -23,9 +23,9 @@ height:10rem;
 
 
 span{
-  
-  font-size:3rem;
-  font-weight:900;
+  color:${({theme})=>theme.colors.btn};;
+  font-size:2.3rem;
+  font-weight:700;
 }
 `
 
