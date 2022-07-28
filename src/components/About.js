@@ -1,9 +1,18 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import HeroSection from './HeroSection'
+import GlobalContext from '../context/app/GlobalContext.js'
 
 const About = () => {
+  const {updateAboutPage}=GlobalContext();
+
+  useEffect(() => {
+    updateAboutPage();
+    // eslint-disable-next-line
+  }, [])
+
   return (
     <>
-        <h2>About</h2>
+    <HeroSection />
     </>
   )
 }

@@ -2,16 +2,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from '../styles/Button'
+import GlobalContext from '../context/app/GlobalContext.js'
 
 const HeroSection = () => {
+    const {herotop,name,image}=GlobalContext();
+
   return (
     <>
     <Wrapper>
      <div className="container grid grid-two-column">
      {/* /* ----------------------Hero Data------------------- */ }
         <div className="section-hero-data">
-        <p className="hero-top-data">THIS IS ME</p>
-        <h1 className="hero-heading">SHAHZAIB NAEEM</h1>
+        <p className="hero-top-data">{herotop}</p>
+        <h1 className="hero-heading">{name}</h1>
         <p className="hero-data">I'm Shahzaib Naeem.A Full Stack Developer ,Photo Editor and a Student.I have graduated from UOG(University of Gujrat).Will be going to share my thoughts on this Blog.</p>
         <Button className='btn contactme-btn'>
         <NavLink to='/contact'>contact me</NavLink>
@@ -20,7 +23,7 @@ const HeroSection = () => {
 
      {/* /* ----------------------Hero Image------------------- */ }
         <div className="section-hero-image">
-        <img className="hero-img" src='./images/hero.svg' alt='Hero'/> {/*By default react goes to public folder*/ } 
+        <img className="hero-img" src={image} alt='Hero'/> {/*By default react goes to public folder*/ } 
         </div>
      </div>
     </Wrapper>
