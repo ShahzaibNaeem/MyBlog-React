@@ -1,0 +1,11 @@
+NPM packages used:
+styled-components
+react-router-dom
+
+Fonts used:
+Work Sans
+
+BackEnd:
+Api Hosting on www.heroku.com
+ApiLink: https://shahzaibblogapi.herokuapp.com/myservices
+

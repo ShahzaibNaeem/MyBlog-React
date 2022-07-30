@@ -1,13 +1,21 @@
-import { useReducer } from "react";
+import { useReducer,useEffect } from "react";
 import { reducer } from "../../reducers/app/reducer";
 import AppContext from "./AppContext"
 
 const AppProvider=(props)=>{
+
+   const API="https://shahzaibblogapi.herokuapp.com/myservices";
+
    const initialState={
-    herotop:"",
-    name:"",
-    image:""
+      herotop:"",
+      name:"",
+      image:"",
+      services:[]
    }
+   
+   const[state,dispatch]=useReducer(reducer,initialState);
+
+   // -----------Home & About----------
    const updateHomePage=()=>{
       return dispatch({
          type:"HOME_UPDATE",
@@ -28,8 +36,21 @@ const AppProvider=(props)=>{
          }
       })
    }
-   
-   const[state,dispatch]=useReducer(reducer,initialState);
+
+   // -----------Services---------
+   const getServices=async(api)=>{
+    try {
+      const response= await fetch(api);
+      const data= await response.json();
+      dispatch({type:"GET_SERVICES",payload:data})
+    } catch (error) {
+      
+    }
+   }
+    useEffect(() => {
+      getServices(API);
+      // eslint-disable-next-line
+    }, [])
 
    return ( 
    <AppContext.Provider value={{...state,updateHomePage,updateAboutPage}}>

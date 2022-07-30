@@ -4,7 +4,6 @@ import GlobalContext from '../context/app/GlobalContext.js'
 
 const About = () => {
   const {updateAboutPage}=GlobalContext();
-
   useEffect(() => {
     updateAboutPage();
     // eslint-disable-next-line

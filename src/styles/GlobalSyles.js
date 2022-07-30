@@ -63,5 +63,11 @@ export const GlobalStyle=createGlobalStyle`
   .grid-three-column{
    grid-template-columns:repeat(3,auto);
   }
+  .common-heading{
+   font-size:3.8rem;
+   font-weight:600;
+   margin-bottom:6rem;
+   text-transform:uppercase;
+  }
 
 `
