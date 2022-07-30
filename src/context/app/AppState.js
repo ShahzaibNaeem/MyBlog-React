@@ -1,4 +1,4 @@
-import { useReducer,useEffect } from "react";
+import { useReducer,useEffect,useState} from "react";
 import { reducer } from "../../reducers/app/reducer";
 import AppContext from "./AppContext"
 
@@ -10,13 +10,15 @@ const AppProvider=(props)=>{
       herotop:"",
       name:"",
       image:"",
-      services:[]
+      services:[],
+      progress:0
    }
-   
+   const [progress, setProgress] = useState(0)
    const[state,dispatch]=useReducer(reducer,initialState);
 
    // -----------Home & About----------
    const updateHomePage=()=>{
+      setProgress(100)
       return dispatch({
          type:"HOME_UPDATE",
          payload:{
@@ -27,6 +29,7 @@ const AppProvider=(props)=>{
       })
    }
    const updateAboutPage=()=>{
+      setProgress(100)
       return dispatch({
          type:"ABOUT_UPDATE",
          payload:{
@@ -40,11 +43,13 @@ const AppProvider=(props)=>{
    // -----------Services---------
    const getServices=async(api)=>{
     try {
+      setProgress(30);
       const response= await fetch(api);
       const data= await response.json();
+      setProgress(100);
       dispatch({type:"GET_SERVICES",payload:data})
     } catch (error) {
-      
+      console.log(error);
     }
    }
     useEffect(() => {
@@ -53,7 +58,7 @@ const AppProvider=(props)=>{
     }, [])
 
    return ( 
-   <AppContext.Provider value={{...state,updateHomePage,updateAboutPage}}>
+   <AppContext.Provider value={{...state,updateHomePage,updateAboutPage,progress,setProgress}}>
      {props.children}
     </AppContext.Provider>
    )

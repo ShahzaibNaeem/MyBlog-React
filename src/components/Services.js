@@ -1,11 +1,16 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {NavLink} from "react-router-dom";
 import styled from 'styled-components';
 import GlobalContext from '../context/app/GlobalContext'
 import { Button } from '../styles/Button';
 
 const Services = () => {
-  const {services}=GlobalContext();
+  const {services,setProgress}=GlobalContext();
+
+  useEffect(() => {
+    setProgress(100);
+     // eslint-disable-next-line
+  }, [])
   
   return (
     <>

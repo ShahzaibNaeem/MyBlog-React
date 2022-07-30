@@ -5,6 +5,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import LoadingBar from 'react-top-loading-bar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,8 +13,10 @@ import {
 } from "react-router-dom";
 import  { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styles/GlobalSyles';
+import GlobalContext from './context/app/GlobalContext';
 
 function App() {
+  const {progress,setProgress}=GlobalContext()
   const theme={
     colors: {
       heading: "rgb(24 24 29)",
@@ -35,11 +38,18 @@ function App() {
       tab: "998px"
     }
   }
+
   return (
     <>
     <ThemeProvider theme={theme}>
     <GlobalStyle/>
     <Router>
+    <LoadingBar
+        color='rgb(98 84 243)'
+        progress={progress}
+        height={3}
+        onLoaderFinished={() => setProgress(0)}
+      />
 
      <Header/>
      
