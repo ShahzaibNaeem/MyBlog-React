@@ -5,7 +5,12 @@ react-router-dom
 Fonts used:
 Work Sans
 
+Services Used:
+Form spree (For form submission)
+
 BackEnd:
 Api Hosting on www.heroku.com
 ApiLink: https://shahzaibblogapi.herokuapp.com/myservices
+
+
 

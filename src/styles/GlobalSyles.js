@@ -48,6 +48,15 @@ export const GlobalStyle=createGlobalStyle`
   li{
      list-style:none;
   }
+
+  input,textarea{
+   max-width:100rem;
+   color:${({theme})=>theme.colors.black};
+   padding:1.6rem 2.4rem;
+   border:1px solid ${({theme})=>theme.colors.border};
+   text-transform:uppercase;
+   box-shadow:${({theme})=>theme.colors.shadowSupport}
+  }
                      /* ---------Reusable Classes------- */
   .container{
      max-width:120rem;
