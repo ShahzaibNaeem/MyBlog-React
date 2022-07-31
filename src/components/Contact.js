@@ -55,10 +55,12 @@ const Wrapper=styled.section`
   flex-direction:column;
   gap:3rem;
  }
- .btn:hover{
+ .btn{
+ &:hover{
   background-color:rgba(0, 0, 0, 0);
   border:1px solid ${({theme})=>theme.colors.btn};
   color:${({theme})=>theme.colors.btn};
+ }
  }
 `
 

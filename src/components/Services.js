@@ -28,7 +28,7 @@ const Services = () => {
                  <div className="card-data">
                   <h3>{title}</h3>
                   <p>{description}</p>
-                  <Button className='btn'><NavLink to="/services">Read More</NavLink></Button>
+                  <NavLink to="/services"><Button className='btn'>Read More</Button></NavLink>
                  </div>
               </div>
             })
@@ -88,17 +88,13 @@ figure{
 .btn{
   display:block;
   margin:2rem auto;
-  background-color:rgba(0, 0, 0, 0);
-  border:0.1rem solid rgb(93 84 243);
+  color:#fff;
+  background-color:rgb(93 84 243);
+  font-size: 1.4rem;
   &:hover{
-   background-color:  rgb(98 84 243)
-  }
-  &:hover a{
-    color:#fff;
-  }
-  a{
-   font-size:1.8rem;
-   color:rgb(98 84 243)
+   background-color:  #fff;
+   border:0.1rem solid rgb(93 84 243);
+   color:rgb(93 84 243);
   }
 }
 

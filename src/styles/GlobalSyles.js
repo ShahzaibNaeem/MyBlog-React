@@ -72,6 +72,9 @@ export const GlobalStyle=createGlobalStyle`
   .grid-three-column{
    grid-template-columns:repeat(3,auto);
   }
+  .grid-four-column{
+   grid-template-columns:1fr 1.2fr .5fr .8fr;
+  }
   .common-heading{
    font-size:3.8rem;
    font-weight:600;
