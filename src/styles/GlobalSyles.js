@@ -50,7 +50,7 @@ export const GlobalStyle=createGlobalStyle`
   }
 
   input,textarea{
-   max-width:100rem;
+   max-width:100rem;                /* to overwrite default input and textarea size */
    color:${({theme})=>theme.colors.black};
    padding:1.6rem 2.4rem;
    border:1px solid ${({theme})=>theme.colors.border};

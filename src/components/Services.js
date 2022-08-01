@@ -85,18 +85,21 @@ figure{
   }
 }
 
+
 .btn{
   display:block;
+  margin:auto;
   margin:2rem auto;
-  color:#fff;
-  background-color:rgb(93 84 243);
+  border:0.1rem solid rgb(93 84 243); 
+  color:rgb(93 84 243);
+  background-color:#fff;
   font-size: 1.4rem;
   &:hover{
-   background-color:  #fff;
-   border:0.1rem solid rgb(93 84 243);
-   color:rgb(93 84 243);
+   color:  #fff;
+   background-color:rgb(93 84 243);
   }
 }
+
 
 `
 
