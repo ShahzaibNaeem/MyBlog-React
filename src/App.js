@@ -15,6 +15,7 @@ import  { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styles/GlobalSyles';
 import GlobalContext from './context/app/GlobalContext';
 import Error from './components/Error';
+import GotoTop from './components/GotoTop';
 
 function App() {
   const {progress,setProgress}=GlobalContext()
@@ -53,7 +54,8 @@ function App() {
       />
      
      <Header/>
-
+    <GotoTop/>
+   
     {/* ----------Router--------- */}
     <Routes>
       <Route exact path="/" element={<Home/>}/>
@@ -62,7 +64,6 @@ function App() {
       <Route exact path="/contact" element={<Contact/>}/>
       <Route exact path="*" element={<Error/>}/>
     </Routes>
-
     <Footer/>
 
     </Router>

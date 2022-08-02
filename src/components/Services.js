@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 import styled from 'styled-components';
 import GlobalContext from '../context/app/GlobalContext'
 import { Button } from '../styles/Button';
+import Typewriter from 'typewriter-effect';
 
 const Services = () => {
   const {services,setProgress}=GlobalContext();
@@ -16,7 +17,13 @@ const Services = () => {
     <>
      <Wrapper>
        <div className="section">
-         <h2 className="common-heading">Our Services</h2>
+         <h2 className="common-heading"><Typewriter
+                    options={{
+                      strings: ['Services', 'Technologies'],
+                      autoStart: true,
+                      loop: true
+                    }}
+                  /></h2>
          <div className="container grid grid-three-column">
           {
             services.map((element)=>{

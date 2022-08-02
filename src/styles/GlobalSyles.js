@@ -12,6 +12,19 @@ export const GlobalStyle=createGlobalStyle`
      overflow-x:hidden;
   }
 
+  ::-webkit-scrollbar{
+    width:1.5rem;
+  }
+  ::-webkit-scrollbar-track{
+    background-color:#efefef;
+  }
+  ::-webkit-scrollbar-thumb{
+   background-image:${({theme})=>theme.colors.gradient}
+  }
+  ::-webkit-scrollbar-thumb{
+   background-image:black
+  }
+
   h1{
      color:${({theme})=>theme.colors.heading}; /*Destructuring in the parameters */
      font-size:6rem;

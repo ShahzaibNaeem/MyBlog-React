@@ -25,7 +25,6 @@ const Contact = () => {
   }
   function afterOpenModal() {
     modalimage.current.style.maxWidth="60%";
-    console.log(modalimage.current);
   }
 
   function closeModal() {
@@ -47,7 +46,7 @@ const Contact = () => {
     openmodal.current.click();
     setTimeout(()=>{
    closemodal.current.click();
-    },2500)
+    },10000)
   }
   return (
     <>
@@ -60,7 +59,7 @@ const Contact = () => {
             onRequestClose={closeModal}
             style={customStyles}
             contentLabel="Example Modal"
-          >
+            ariaHideApp={false} >
           <div className="modal-page" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",gap:"4rem"}}>
            <img ref={modalimage} src="./images/sent.svg" alt="Thank You!" />
           

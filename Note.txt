@@ -12,5 +12,7 @@ BackEnd:
 Api Hosting on www.heroku.com
 ApiLink: https://shahzaibblogapi.herokuapp.com/myservices
 
+PexelsApi (To get images)
+ApiKey:563492ad6f91700001000001899aeb41c73346b4931f8369987470e8
 
 
