@@ -11,6 +11,9 @@ export const GlobalStyle=createGlobalStyle`
      font-size:62.5% ;  /*rem uses html root element font size we are overwriting it to 10px  */
      overflow-x:hidden;
   }
+  body{
+   overflow-x:hidden;
+  }
 
   ::-webkit-scrollbar{
     width:1.5rem;
