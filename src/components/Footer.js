@@ -1,10 +1,30 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Button } from '../styles/Button'
 import {FaInstagram,FaFacebook,FaYoutube} from 'react-icons/fa'
+import { BsFillSuitHeartFill } from "react-icons/bs";
 
 const Footer = () => {
+  const [beauty, setbeauty] = useState({level:""})
+  const [Click, setClick] = useState(1)
+
+  const handleClick=()=>{
+    setClick(Click+1);
+    if(Click===1){
+      setbeauty({...beauty,level:"super  cute 😋"})
+    }
+    else if(Click===2){
+      setbeauty({...beauty,level:"super duper cute 😍"})
+    }
+    else if(Click===3){
+      setbeauty({...beauty,level:"Exceptional Cute 😘"})
+    }
+    else if(Click===4){
+      setbeauty({...beauty,level:"Let's Repeat 😉"})
+      setClick(1);
+    }
+  }
   return (
     <>
        <Wrapper>
@@ -31,11 +51,11 @@ const Footer = () => {
           </div>
                     {/* --Column 2--  */}
           <div className="footer-follow">
-            <h3>Follow to get Important Updates</h3>
+            <h3>How Pretty you are ?</h3>
             <form action="#">
-            <input readOnly type="text" value="facebook.com/rockman34" />
-            </form>
-            <a href="https://www.facebook.com/rockman34" target="_blank" rel="noreferrer"><Button>Follow</Button></a>
+            <input readOnly type="text" value={beauty.level} />
+            </form> 
+            <Button onClick={handleClick}>Press Me</Button>
           </div>
                      {/* --Column 3--  */}
           <div className="footer-social">
@@ -61,7 +81,7 @@ const Footer = () => {
                       {/* --Column 4--  */}
           <div className="footer-contact">
             <h3>Call Us</h3>
-            <h3>+92 3364609599</h3>
+            <h3><a href="tel:+923364609599">+92 3364609599</a></h3>
           </div>           
         </div>  
 
@@ -71,7 +91,7 @@ const Footer = () => {
             <p>{new Date().getFullYear()} Shahzaib Blog. All Rights Reserved</p>
           <div>
             <p>PRIVACY POLICY</p>
-            <p>TERMS & CONDITIONS</p>
+            <p>MADE WITH <BsFillSuitHeartFill className='footer-bottom-icon'/> BY SHAHZAIB</p>
           </div>
           </div>
         </div>   
@@ -109,9 +129,15 @@ footer{
  }
 }
 
+.footer-follow{
 form{
   margin:2rem 0rem;
 }
+button{
+  font-size:1.4rem;
+}
+}
+
 .footer-social-icons{
   display:flex;
   gap:2rem;
@@ -129,8 +155,12 @@ div{
 }
 
 .footer-contact{
-  h3{
+  a{
     color:${({theme})=>theme.colors.hr};
+    cursor:pointer;
+    &:hover{
+      cursor:pointer;
+    }
   }
 }
 
@@ -140,6 +170,13 @@ div{
     margin-bottom:2rem;
     color:${({theme})=>theme.colors.hr};
     height:0.1rem;
+  }
+  .footer-bottom-icon{
+    transition:all 0.3s ease 0s;
+    &:hover{
+      color:red;
+      transform:scale(90%)
+    }
   }
 }
 

@@ -1,9 +1,11 @@
-import React,{useState,useRef}  from 'react'
+import React,{useState,useRef,useEffect}  from 'react'
 import ReactModal from 'react-modal';
 import styled from 'styled-components'
+import GlobalContext from '../context/app/GlobalContext';
 import { Button } from '../styles/Button'
 
 const Contact = () => {
+  const {setProgress}=GlobalContext();
   // ---------------Modal CSS ,Hooks and Functions------------
   const openmodal=useRef(null);
   const closemodal=useRef(null);
@@ -32,6 +34,11 @@ const Contact = () => {
   }
 
   // -------------------Contact Form CSS ,Hooks and Functions------------
+  useEffect(() => {
+    setProgress(100);
+    // eslint-disable-next-line
+  }, [])
+  
   const handleSubmit =async (e) =>{
     e.preventDefault();
     const data= new FormData(e.target)

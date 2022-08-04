@@ -15,7 +15,7 @@ const HeroSection = () => {
         <div className="section-hero-data">
         <p className="hero-top-data">{herotop}</p>
         <h1 className="hero-heading">{name}</h1>
-        <p className="hero-data">I'm Shahzaib Naeem.A Full Stack Developer ,Photo Editor and a Student.I have graduated from UOG(University of Gujrat).Will be going to share my thoughts on this Blog.</p>
+        <p className="hero-data">I'm Shahzaib Naeem.A Full Stack Developer ,Photo Editor and a Student.I have graduated from UOG(University of Gujrat).SHAHZAIB BLOG is my attempt to share my coding escapade with you.</p>
         <NavLink to='/contact'><Button className='btn contactme-btn'>
         contact me </Button></NavLink>
         </div>

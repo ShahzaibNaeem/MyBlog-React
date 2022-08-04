@@ -10,8 +10,7 @@ const AppProvider=(props)=>{
       herotop:"",
       name:"",
       image:"",
-      services:[],
-      progress:0
+      services:[]
    }
    const [progress, setProgress] = useState(0)
    const[state,dispatch]=useReducer(reducer,initialState);
