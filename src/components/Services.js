@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react'
-import {NavLink} from "react-router-dom";
 import styled from 'styled-components';
 import GlobalContext from '../context/app/GlobalContext'
 import { Button } from '../styles/Button';
@@ -27,7 +26,7 @@ const Services = () => {
          <div className="container grid grid-three-column">
           {
             services.map((element)=>{
-              const {id,title,image,description}=element;
+              const {id,title,image,description,link}=element;
               return <div className="card" key={id}>
                 <figure>
                 <img src={image} alt={title} />
@@ -35,7 +34,7 @@ const Services = () => {
                  <div className="card-data">
                   <h3>{title}</h3>
                   <p>{description}</p>
-                  <NavLink to="/services"><Button className='btn'>Read More</Button></NavLink>
+                  <a href={link} target="_blank" rel="noreferrer"><Button className='btn'>Read More</Button></a>
                  </div>
               </div>
             })
