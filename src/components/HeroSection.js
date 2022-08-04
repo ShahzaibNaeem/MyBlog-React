@@ -63,5 +63,15 @@ padding:9rem 0rem;
     max-width:80%;
 }
 
+ /* ----Media Querires for Mobile 786px---- */
+ @media (max-width:${({theme})=>theme.media.mobile}){
+      .grid-two-column{
+        gap:7.2rem;
+      }
+      .section-hero-data{
+        text-align:center;
+      }
+ }
+
 `
 export default HeroSection

@@ -67,6 +67,8 @@ cursor:pointer;
  100%{
     transform:translateY(0.5rem);
     };
-}`
+}
+
+ `
 
 export default GotoTop

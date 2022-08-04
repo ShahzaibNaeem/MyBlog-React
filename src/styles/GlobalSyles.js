@@ -98,4 +98,31 @@ export const GlobalStyle=createGlobalStyle`
    text-transform:uppercase;
   }
 
+   /* ----Media Querires for Tab 998px---- */
+   @media (max-width:${({theme})=>theme.media.tab}){
+      .container{
+         padding:0 3.2rem;          /* prpert is inherited to mobiled Query auto */
+      }
+      .grid-three-column{
+        grid-template-columns:repeat(2,auto);
+      }
+      .grid-four-column{
+        grid-template-columns:repeat(2,auto);
+
+      }
+   }
+
+    /* ----Media Querires for Mobile 786px---- */
+  @media (max-width:${({theme})=>theme.media.mobile}){
+      html{
+         font-size:50%;
+      }
+      .grid{
+         gap:3.2rem;
+      }
+      .grid-two-column, .grid-three-column,.grid-four-column{
+         grid-template-columns:1fr;
+      }
+   }
+
 `

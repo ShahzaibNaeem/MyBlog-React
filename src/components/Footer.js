@@ -180,6 +180,34 @@ div{
   }
 }
 
+   /* ----Media Querires for Tab 998px---- */
+  @media (max-width:${({theme})=>theme.media.tab}){
+   .contact-short{
+   max-width:80vw;
+   }
+  }
+
+   /* ----Media Querires for Mobile 786px---- */
+  @media (max-width:${({theme})=>theme.media.mobile}){
+    .contact-short{
+      max-width:90vw;
+      padding:2rem 0rem;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    .contact-short-link{
+      text-align:center;
+      }
+    }
+
+    .footer-bottom-section{
+      padding-top:3.2rem;
+    }
+
+
+  }
+
 
 
 `

@@ -1,11 +1,12 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { CgMenu,CgCloseR } from "react-icons/cg";
+import GlobalContext from '../context/app/GlobalContext';
 
 
 const Navbar = () => {
-  const [OpenMenu, setOpenMenu] = useState(false)
+  const {OpenMenu,setOpenMenu}=GlobalContext()
   return (
     <>
     <Nav>
@@ -72,11 +73,11 @@ const Nav=styled.nav`
     height:100vh;
     background-color:#fff;
     transform:translateX(100%);
-    display:flex;
+    display:flex;                /*For temporarily setting the UI initially*/
     flex-direction:column;
     align-items:center;
     justify-content:center; 
-    visibility:hidden;
+    display:none;               /* To Hide initially from left side*/
     .navbar-link{
      &:link,&:visited{                 /*Doing this because of CSS Specific property*/
     font-size:4.2rem;                  /*Overwriting the Normal Navbar values*/       
@@ -100,7 +101,7 @@ const Nav=styled.nav`
     display:inline-block;
   }
   .active .navbar-list{
-  visibility:visible;
+   display:flex;
    opacity:1;
    transform:translateX(0%);
    z-index:999;                     /*Goes on Top because of z-index */

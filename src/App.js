@@ -18,7 +18,7 @@ import Error from './components/Error';
 import GotoTop from './components/GotoTop';
 
 function App() {
-  const {progress,setProgress}=GlobalContext()
+  const {progress,setProgress,OpenMenu}=GlobalContext()
   const theme={
     colors: {
       heading: "rgb(24 24 29)",
@@ -57,6 +57,7 @@ function App() {
     <GotoTop/>
    
     {/* ----------Router--------- */}
+    {!OpenMenu &&
     <Routes>
       <Route exact path="/" element={<Home/>}/>
       <Route exact path="/about" element={<About/>}/>
@@ -64,8 +65,10 @@ function App() {
       <Route exact path="/contact" element={<Contact/>}/>
       <Route exact path="*" element={<Error/>}/>
     </Routes>
+    }
+    {!OpenMenu &&
     <Footer/>
-
+    }
     </Router>
     </ThemeProvider>
     </>

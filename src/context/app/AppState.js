@@ -13,6 +13,7 @@ const AppProvider=(props)=>{
       services:[]
    }
    const [progress, setProgress] = useState(0)
+   const [OpenMenu, setOpenMenu] = useState(false)
    const[state,dispatch]=useReducer(reducer,initialState);
 
    // -----------Home & About----------
@@ -57,7 +58,7 @@ const AppProvider=(props)=>{
     }, [])
 
    return ( 
-   <AppContext.Provider value={{...state,updateHomePage,updateAboutPage,progress,setProgress}}>
+   <AppContext.Provider value={{...state,updateHomePage,updateAboutPage,progress,setProgress,OpenMenu,setOpenMenu}}>
      {props.children}
     </AppContext.Provider>
    )
