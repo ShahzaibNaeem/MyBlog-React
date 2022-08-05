@@ -38,7 +38,7 @@ const Wrapper=styled.section`
     max-width:70rem;
 }
 .popup-inner-data{
-    padding:4rem;
+    padding:1rem 4rem 5rem 4rem;
 }
 .popup-inner-btn{
     display:flex;
