@@ -35,6 +35,7 @@ const Contact = () => {
 
   // -------------------Contact Form CSS ,Hooks and Functions------------
   useEffect(() => {
+    document.title="Contact Us | Shahzaib Blog";
     setProgress(100);
     // eslint-disable-next-line
   }, [])

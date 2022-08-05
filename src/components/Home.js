@@ -8,6 +8,7 @@ const Home = () => {
   const {updateHomePage}=GlobalContext();
 
   useEffect(() => {
+    document.title="Shahzaib Blog";
     updateHomePage()
     // eslint-disable-next-line
   }, [])

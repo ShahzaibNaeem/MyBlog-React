@@ -4,10 +4,12 @@ import styled from 'styled-components'
 import { Button } from '../styles/Button'
 import {FaInstagram,FaFacebook,FaYoutube} from 'react-icons/fa'
 import { BsFillSuitHeartFill } from "react-icons/bs";
+import Popup from './Popup'
 
 const Footer = () => {
-  const [beauty, setbeauty] = useState({level:""})
-  const [Click, setClick] = useState(1)
+  const [beauty, setbeauty] = useState({level:""});
+  const [Click, setClick] = useState(1);
+  const [btnPopup, setbtnPopup] = useState(false);
 
   const handleClick=()=>{
     setClick(Click+1);
@@ -90,7 +92,19 @@ const Footer = () => {
           <div className="container grid grid-two-column">
             <p>{new Date().getFullYear()} Shahzaib Blog. All Rights Reserved</p>
           <div>
-            <p>PRIVACY POLICY</p>
+          {/* -----Privacy Policy popup----- */}
+          <div className='footer-bottom-popup'>
+            <p className='popup-btn' onClick={()=> setbtnPopup(true)}>PRIVACY POLICY</p>
+            <Popup  trigger={btnPopup} setTrigger={setbtnPopup}>
+            <h2>Privacy Policy</h2>
+            <p>Effective date: August 05, 2022</p>
+            <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy.</p>
+            <h3>Personal Data</h3>
+            <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you "Personal Data". Personally, identifiable information may include, but is not limited to: <div>1&#41; Email address</div>
+            <div>2&#41; Names</div> 
+            <div>3&#41; Cookies and Usage Data</div> </p>
+            </Popup>
+            </div>
             <p>MADE WITH <BsFillSuitHeartFill className='footer-bottom-icon'/> BY SHAHZAIB</p>
           </div>
           </div>
@@ -170,6 +184,21 @@ div{
     margin-bottom:2rem;
     color:${({theme})=>theme.colors.hr};
     height:0.1rem;
+  }
+  .footer-bottom-popup{
+   .popup-btn{
+    color:${({theme})=>theme.colors.hr};
+    cursor:pointer;
+   }
+   h3,h2,p{
+    color:rgb(24 24 29);
+   }
+   h2{
+    margin-bottom:3rem;
+   }
+   h3{
+    margin:1.5rem 0 0 0;
+   }
   }
   .footer-bottom-icon{
     transition:all 0.3s ease 0s;

@@ -8,6 +8,7 @@ const Services = () => {
   const {services,setProgress}=GlobalContext();
 
   useEffect(() => {
+    document.title="Services | Shahzaib Blog";
     setProgress(100);
      // eslint-disable-next-line
   }, [])

@@ -53,7 +53,7 @@ export const GlobalStyle=createGlobalStyle`
      font-size:1.65rem;
      font-weight:400;
      line-height:1.5;
-     margin-top:1rem
+     margin-top:1rem;
   }
 
   a{
@@ -101,14 +101,13 @@ export const GlobalStyle=createGlobalStyle`
    /* ----Media Querires for Tab 998px---- */
    @media (max-width:${({theme})=>theme.media.tab}){
       .container{
-         padding:0 3.2rem;          /* prpert is inherited to mobiled Query auto */
+         padding:0 3.2rem;          /* propert is inherited to mobiled Query auto */
       }
       .grid-three-column{
         grid-template-columns:repeat(2,auto);
       }
       .grid-four-column{
         grid-template-columns:repeat(2,auto);
-
       }
    }
 
