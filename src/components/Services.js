@@ -3,10 +3,54 @@ import styled from 'styled-components';
 import GlobalContext from '../context/app/GlobalContext'
 import { Button } from '../styles/Button';
 import Typewriter from 'typewriter-effect';
-
+const services = [
+  {
+  "id": 1,
+  "title": "React JS",
+  "image": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "description": "React is a declarative, efficient, and flexible JavaScript library for building user interfaces created by facebook. It lets you compose complex UIs from small and isolated pieces of code .",
+  "link":"https://reactjs.org/"
+  },
+  {
+  "id": 2,
+  "title": "Node JS",
+  "image": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+  "description": "Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript",
+  "link":"https://nodejs.org/en/"
+  },
+  {
+  "id": 3,
+  "title": "Express JS",
+  "image": "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "description": "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is an open source framework .",
+  "link":"https://expressjs.com/"
+  },
+  {
+  "id": 4,
+  "title": "Mongo DB",
+  "image": "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "description": "MongoDB is an open-source document-oriented database. MongoDB has been adopted as backend software by a number of major websites including EA, Adobe, eBay e.t.c",
+  "link":"https://www.mongodb.com/"
+  },
+  {
+  "id": 5,
+  "title": "Adobe Photoshop",
+  "image": "https://images.pexels.com/photos/6155010/pexels-photo-6155010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "description": "Adobe Photoshop is a most popular photo editing and raster graphic design software which allows users to create, edit, and manipulate various graphics as well as digital art. ",
+  "link":"https://www.adobe.com/products/photoshop.html"
+  },
+  {
+  "id": 6,
+  "title": "Adobe Premiere Pro",
+  "image": "https://images.pexels.com/photos/5054208/pexels-photo-5054208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "description": "Adobe Premiere Pro is a software application for video editing from Adobe Systems. Premiere Pro is used for editing videos, commercials and other film, television, and online video",
+  "link":"https://www.adobe.com/products/illustrator.html"
+  }
+  ]
+  
 const Services = () => {
-  const {services,setProgress}=GlobalContext();
-
+  const {setProgress}=GlobalContext();
+   console.log(services)
   useEffect(() => {
     document.title="Services | Shahzaib Blog";
     setProgress(100);
@@ -49,7 +93,7 @@ const Services = () => {
 
 const Wrapper=styled.section`
 padding:9rem 0rem;
-background-color:#{({theme})=>theme.color.bg}
+background-color:${({theme})=> theme.colors.bg};
 
 .card{
   border:0.1rem solid rgba(170,170,170,0.4)
